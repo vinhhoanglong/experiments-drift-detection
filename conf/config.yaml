@@ -2,13 +2,22 @@ defaults:
   - _self_
 
 params:
-  buffer_capacity: [30]
-  epochs: [1]
-  chunk_size: [15]
-  threshold_factor: [3]
-  window_size: [5]
+  buffer_capacity: [100, 200]
+  epochs: [50]
+  chunk_size: [100]
+  threshold_factor: [3, 3.5]
+  window_size: [5, 7]
   initial_train_size: [400]
 
 ground_truth_file: grouth_truth.json
 list_data:
   - sudden_trace_noise0_1000_cd.xes
+  - sudden_trace_noise0_1000_cb.xes
+  - sudden_trace_noise0_1000_cf.xes
+  - sudden_trace_noise0_1000_cp.xes
+  - sudden_trace_noise0_1000_lp.xes
+  - sudden_trace_noise0_1000_pl.xes
+  - sudden_trace_noise0_1000_pm.xes
+  - sudden_trace_noise0_1000_re.xes
+  - sudden_trace_noise0_1000_rp.xes
+  - sudden_trace_noise0_1000_se.xes

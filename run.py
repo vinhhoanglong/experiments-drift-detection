@@ -89,7 +89,7 @@ def main(cfg: DictConfig):
         ground_truth_dict = json.load(f)
 
     for log_name in cfg.list_data:
-        log_path = os.path.join(orig_cwd, "data", log_name)
+        log_path = os.path.join(orig_cwd, "data_eval", log_name)
         log = read_xes(log_path)
         feature_matrix, activity_to_int, max_len, vocab_size = preprocess_log_for_gan(log)
         params = cfg.params

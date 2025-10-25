@@ -1,3 +1,12 @@
 {
-  "sudden_trace_noise0_1000_cd.xes": [499]
+  "sudden_trace_noise0_1000_cd.xes": [499],
+  "sudden_trace_noise0_1000_cf.xes": [499],
+  "sudden_trace_noise0_1000_cb.xes": [499],
+  "sudden_trace_noise0_1000_cp.xes": [499],
+  "sudden_trace_noise0_1000_lp.xes": [499],
+  "sudden_trace_noise0_1000_pl.xes": [499],
+  "sudden_trace_noise0_1000_pm.xes": [499],
+  "sudden_trace_noise0_1000_re.xes": [499],
+  "sudden_trace_noise0_1000_rp.xes": [499],
+  "sudden_trace_noise0_1000_sw.xes": [499]
 }
