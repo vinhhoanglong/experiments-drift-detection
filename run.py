@@ -24,9 +24,10 @@ def run_gan(feature_matrix, vocab_size, max_len, name_log, params, ground_truth,
     values = params.values()
 
     hyper_params = [dict(zip(keys, v)) for v in itertools.product(*values)]
-    output_file = os.path.join(os.getcwd(), f'output/{name_log}_gan.txt')
+    output_file = os.path.join(os.getcwd(), f'output/{name_log}/experiment_log.log')
     output_dir = os.path.dirname(output_file)
     os.makedirs(output_dir, exist_ok=True)
+    start_time = datetime.now().timestamp()
     with open(output_file, 'w') as f:
         f.write(f"AdaptiveDriftDetector Experiment Log\n")
         f.write(f"Run started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
@@ -51,7 +52,7 @@ def run_gan(feature_matrix, vocab_size, max_len, name_log, params, ground_truth,
 
         for j in range(0, len(monitoring_stream), chunk_size):
             chunk = monitoring_stream[j:j+chunk_size]
-            if len(chunk == 0):
+            if len(chunk) == 0:
                 break
             scores, drift_pt, threshold = detector.detect_drift(
                 chunk,
@@ -79,6 +80,8 @@ def run_gan(feature_matrix, vocab_size, max_len, name_log, params, ground_truth,
             f.write(f"Precision: {precision}\n")
             f.write(f"Recall: {recall}\n")
             f.write(f"F1-Score: {f1_score}\n")
+            elapsed_time = int(datetime.now().timestamp() - start_time)
+            f.write(f"Time run: {elapsed_time}\n")
 
 @hydra.main(config_path="conf", config_name="config")
 def main(cfg: DictConfig):

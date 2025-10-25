@@ -1,6 +1,0 @@
-buffer_capacity: [300]
-epochs: [50]
-chunk_size: [100]
-threshold_factor: [3.5]
-window_size: [ 7]
-initial_train_size: [400]
