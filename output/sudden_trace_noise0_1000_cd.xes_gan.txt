@@ -1,0 +1,18 @@
+AdaptiveDriftDetector Experiment Log
+Run started at: 2025-10-25 15:31:40
+Total experiments to run: 1
+==================================================
+
+experiment 1
+{
+    "buffer_capacity": 30,
+    "epochs": 1,
+    "chunk_size": 15,
+    "threshold_factor": 3,
+    "window_size": 5,
+    "initial_train_size": 400
+}
+Drifts are detected at []
+Precision: nan
+Recall: 0.0
+F1-Score: nan

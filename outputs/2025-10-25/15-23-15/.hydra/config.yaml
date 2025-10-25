@@ -1,0 +1,16 @@
+params:
+  buffer_capacity:
+  - 30
+  epochs:
+  - 1
+  chunk_size:
+  - 15
+  threshold_factor:
+  - 3
+  window_size:
+  - 5
+  initial_train_size:
+  - 400
+ground_truth_file: grouth_truth.json
+list_data:
+- sudden_trace_noise0_1000_cd.xes

@@ -38,7 +38,6 @@ def _getTimeDifference(time1:dt.datetime, time2: dt.datetime, scale:str) -> floa
 
 def _getNumActivities(log: EventLog, activityName_key:str=xes.DEFAULT_NAME_KEY)->int:
     # calculate the number of activities in an event log
-    
     return len(_getActivityNames(log, activityName_key))
 
 def _getActivityNames(log: EventLog, activityName_key:str=xes.DEFAULT_NAME_KEY)->List[str]:
@@ -53,3 +52,11 @@ def _getActivityNames_LogList(logs:List[EventLog], activityName_key:str=xes.DEFA
 def makeProgressBar(num_iters:int=None, message:str="", position:int=None):
     return tqdm(total=num_iters, desc=f"{message} :: ", position=position, leave=True)
 
+def safe_update_bar(progress_bar, amount:int=1)->None:
+    if progress_bar is not None:
+        progress_bar.update(amount)
+
+def transitiveRedution(relation:Set[Tuple[Any,Any]]) -> Set[Tuple[Any,Any]]:
+    digraph = nx.DiGraph(list(relation))
+    reduction = nx.transitive_reduction(digraph)
+    return set(reduction.edges)

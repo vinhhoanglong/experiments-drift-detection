@@ -1,0 +1,6 @@
+buffer_capacity: [30]
+epochs: [1]
+chunk_size: [15]
+threshold_factor: [3]
+window_size: [5, 7]
+initial_train_size: [400]
